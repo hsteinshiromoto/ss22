@@ -29,15 +29,15 @@ BACKSLASH = '\\'
 # Makefile arguments
 # ---
 ifndef DOCKER_PARENT_IMAGE
-DOCKER_PARENT_IMAGE="ubuntu:latest"
+DOCKER_PARENT_IMAGE="ubuntu:20.04"
 endif
 
 ifndef TEX_FILENAME
-TEX_FILENAME=HSteinShiromoto
+TEX_FILENAME=paper
 endif
 
 ifndef PYTHON_VERSION
-PYTHON_VERSION=3.10
+PYTHON_VERSION=3.10.6
 endif
 
 # ---
@@ -46,9 +46,11 @@ endif
 ## Build base Docker image
 base_image:
 	$(eval DOCKER_IMAGE_TAG=${DOCKER_IMAGE_NAME}.base:${BASE_IMAGE_TAG})
+	$(eval DOCKER_PARENT_IMAGE="ubuntu:20.04")
 
 	@echo "Building docker image ${DOCKER_IMAGE_TAG}"
 	docker build --build-arg BUILD_DATE=${BUILD_DATE} \
+				--build-arg DOCKER_PARENT_IMAGE=${DOCKER_PARENT_IMAGE} \
 				-f Dockerfile.base \
 				-t ${DOCKER_IMAGE_TAG} .
 	@echo "Done"
