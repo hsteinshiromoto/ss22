@@ -75,6 +75,10 @@ app_image:
 image: base_image app_image
 	exit 0
 
+## Copy git hooks to git folder
+hooks:
+	cp bin/post-checkout .git/hooks
+
 all: ${BINS}
 
 %: %.tex
