@@ -37,7 +37,7 @@ TEX_FILENAME=paper
 endif
 
 ifndef PYTHON_VERSION
-PYTHON_VERSION=3.10
+PYTHON_VERSION=3.10.6
 endif
 
 # ---
