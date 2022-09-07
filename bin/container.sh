@@ -65,8 +65,12 @@ get_container_id() {
 }
 
 pull() {
-    docker pull 
-    docker tag 
+    make_variables
+
+    echo ${DOCKER_IMAGE}
+
+    docker pull ${DOCKER_IMAGE} 
+    docker tag ${DOCKER_IMAGE}:latest ${REGISTRY_USER}/${PROJECT_NAME}:latest
 }
 
 run_container() {
