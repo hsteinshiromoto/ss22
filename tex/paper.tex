@@ -1,6 +1,6 @@
 \documentclass{tufte-handout}
 
-\title{Using Automatic Control to Automatically Tune a Machine Learning Model}
+\title{Using Automatic Feedback Control to Automate Tunning Machine Learning Models}
 
 \author[H. Stein Shiromoto]{Humberto Stein Shiromoto}
 
@@ -45,6 +45,11 @@ The essential problem within machine learning is to solve the problem
 \begin{eqnarray}
   f=\arg\min_\theta&\mathcal{L}(y,\hat{y},\theta)\;,
 \end{eqnarray}
-where $\mathcal{L}:\mathbb{R}ˆn\times\mathbb{R}^n\times\mathbb{R}^m\to\mathbb{R}_{\geq0}$ is a differentiable function called loss.
+where $\mathcal{L}:\mathbb{R}^n\times\mathbb{R}^n\times\mathbb{R}^m\to\mathbb{R}_{\geq0}$ is a differentiable functional called loss.
+
+Now assume that the parameter $\theta:\mathbb{Z}\to\mathbb{Z}$ evolves over time, in accordance to the difference equation
+\begin{equation}
+\theta^+=g(y,\hat{y})+h(y,\hat{y})\theta
+\end{equation}
 
 \end{document}
