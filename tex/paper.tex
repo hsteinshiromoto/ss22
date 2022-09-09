@@ -41,13 +41,13 @@ This paper uses feedback-control approaches to tune machine learning models.
 
 \section{Introduction}
 
-The essential problem within machine learning is to solve the problem
+The essential problem within supervised learning is to solve the problem
 \begin{eqnarray}
   f=\arg\min_\theta&\mathcal{L}(y,\hat{y},\theta)\;,
 \end{eqnarray}
-where $\mathcal{L}:\mathbb{R}^n\times\mathbb{R}^n\times\mathbb{R}^m\to\mathbb{R}_{\geq0}$ is a differentiable functional called loss.
+where $\mathcal{L}:\mathbb{R}^n\times\mathbb{R}^n\times\mathbb{R}^m\to\mathbb{R}_{\geq0}$ is a differentiable functional called \emph{loss}, $y\in\mathbb{R}^n$ is the \emph{observation}, $\hat{y}\in\mathbb{R}^n$ is the \emph{prediction}, and, for every time $t\in\mathbb{Z}$, the \emph{parameter} $\theta$ evolves in $\mathbb{R}^m$.
 
-Now assume that the parameter $\theta:\mathbb{Z}\to\mathbb{Z}$ evolves over time, in accordance to the difference equation
+Now assume that the time-evolution of $\theta$ is, in accordance to the difference equation
 \begin{equation}
 \theta^+=g(y,\hat{y})+h(y,\hat{y})\theta
 \end{equation}
