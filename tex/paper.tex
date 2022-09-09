@@ -1,6 +1,6 @@
 \documentclass{tufte-handout}
 
-\title{Using Automatic Feedback Control to Automate Tunning Machine Learning Models}
+\title{Using Automatic Feedback Control to Automatically Tune Machine Learning Models}
 
 \author[H. Stein Shiromoto]{Humberto Stein Shiromoto}
 
@@ -45,7 +45,7 @@ The essential problem within supervised learning is to solve the problem
 \begin{eqnarray}
   f=\arg\min_\theta&\mathcal{L}(y,\hat{y},\theta)\;,
 \end{eqnarray}
-where $\mathcal{L}:\mathbb{R}^n\times\mathbb{R}^n\times\mathbb{R}^m\to\mathbb{R}_{\geq0}$ is a differentiable functional called \emph{loss}, $y\in\mathbb{R}^n$ is the \emph{observation}, $\hat{y}\in\mathbb{R}^n$ is the \emph{prediction}, and, for every time $t\in\mathbb{Z}$, the \emph{parameter} $\theta$ evolves in $\mathbb{R}^m$.
+where $\mathcal{L}:\mathbb{R}^n\times\mathbb{R}^n\times\mathbb{R}^m\to\mathbb{R}_{\geq0}$ is a differentiable functional called \emph{loss}, $y\in\mathbb{R}^n$ is the \emph{observation} vector, $\hat{y}\in\mathbb{R}^n$ is the \emph{prediction} vector, and, for every time $t\in\mathbb{Z}$, the \emph{hyperparameter} $\theta$ evolves in $\mathbb{R}^m$.
 
 Now assume that the time-evolution of $\theta$ is, in accordance to the difference equation
 \begin{equation}
