@@ -1571,9 +1571,9 @@
       \gdef\@@author{\sffamily\Large\allcaps{\@author}\par}%
       \gdef\@@date{\sffamily\Large\allcaps{\@date}\par}%
     }{%
-      \gdef\@@title{\LARGE\itshape\@title\par}%
-      \gdef\@@author{\Large\itshape\@author\par}%
-      \gdef\@@date{\Large\itshape\@date\par}%
+      \gdef\@@title{\LARGE\sffamily\@title\par}%
+      \gdef\@@author{\Large\sffamily\@author\par}%
+      \gdef\@@date{\Large\sffamily\@date\par}%
     }%
     \@@title
     \@@author
@@ -1620,7 +1620,7 @@
 
 \titleformat{\section}%
   [hang]% shape
-  {\normalfont\Large\itshape}% format applied to label+text
+  {\normalfont\Large\sffamily}% format applied to label+text
   {\thesection}% label
   {1em}% horizontal separation between label and title body
   {}% before the title body
@@ -1628,7 +1628,7 @@
 
 \titleformat{\subsection}%
   [hang]% shape
-  {\normalfont\large\itshape}% format applied to label+text
+  {\normalfont\large\sffamily}% format applied to label+text
   {\thesubsection}% label
   {1em}% horizontal separation between label and title body
   {}% before the title body
