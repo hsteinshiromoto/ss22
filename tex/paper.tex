@@ -1,4 +1,4 @@
-\documentclass{tufte-handout}
+\documentclass[a4paper]{tufte-handout}
 
 \title{Using Automatic Feedback Control to Automatically Tune Machine Learning Models}
 
@@ -45,11 +45,17 @@ The essential problem within supervised learning is to solve the problem
 \begin{eqnarray}
   f=\arg\min_\theta&\mathcal{L}(y,\hat{y},\theta)\;,
 \end{eqnarray}
-where $\mathcal{L}:\mathbb{R}^n\times\mathbb{R}^n\times\mathbb{R}^m\to\mathbb{R}_{\geq0}$ is a differentiable functional called \emph{loss}, $y\in\mathbb{R}^n$ is the \emph{observation} vector, $\hat{y}\in\mathbb{R}^n$ is the \emph{prediction} vector, and, for every time $t\in\mathbb{Z}$, the \emph{hyperparameter} $\theta$ evolves in $\mathbb{R}^m$.
+where $\mathcal{L}:\mathbb{R}^n\times\mathbb{R}^n\times\mathbb{R}^m\to\mathbb{R}_{\geq0}$ is a differentiable functional\sidenote{Needs definition} called \emph{loss}, $y\in\mathbb{R}^n$ is the \emph{observation} vector, $\hat{y}\in\mathbb{R}^n$ is the \emph{prediction} vector, and, for every time $t\in\mathbb{Z}$, the \emph{hyperparameter} $\theta$ evolves in $\mathbb{R}^m$.
 
 Now assume that the time-evolution of $\theta$ is, in accordance to the difference equation
 \begin{equation}
 \theta^+=g(y,\hat{y})+h(y,\hat{y})\theta
 \end{equation}
+
+What is tried to be proven here is the following:
+
+If there exists a pair\sidenote{Needs definition} $(V,\theta)$ consisting of a Lyapunov function $V$ and hyperparameters $\theta$ such that the inequality
+$$L_{g+f}V(y,\hat{y},\theta)\leq -V(y,\hat{y})$$
+holds for all $y$ and $\hat{y}$, then $(V,\theta)$ is optimal. 
 
 \end{document}
